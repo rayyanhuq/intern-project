@@ -1,6 +1,16 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
+import google.generativeai as genai
+import os
+
+load_dotenv()
 
 app = FastAPI()
+
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+if API_KEY:
+    genai.configure(api_key=API_KEY)
 
 
 @app.get("/health")
@@ -10,24 +20,26 @@ def health():
 
 @app.post("/generate-summary")
 def generate_summary():
-    return {
-        "summary": "This is a dummy summary response."
-    }
 
+    if not API_KEY:
+        raise HTTPException(
+            status_code=500,
+            detail="GEMINI_API_KEY not found"
+        )
 
-@app.post("/extract-tasks")
-def extract_tasks():
-    return {
-        "tasks": [
-            "Dummy task 1",
-            "Dummy task 2",
-            "Dummy task 3"
-        ]
-    }
+    try:
+        model = genai.GenerativeModel("gemini-2.5-flash")
 
+        response = model.generate_content(
+            "Summarize: FastAPI is a modern Python framework."
+        )
 
-@app.post("/generate-email")
-def generate_email():
-    return {
-        "email": "Hello, this is a dummy email response."
-    }
+        return {
+            "summary": response.text
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"AI request failed: {str(e)}"
+        )
