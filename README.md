@@ -38,3 +38,24 @@ Once the server is running, open:
 ## Environment Variables
 
 Create a `.env` file based on `.env.example` and add any required environment variables there.
+
+## Features
+
+- Meeting note summarization
+- Key decision extraction
+- Action item extraction
+- Follow-up email generation
+- Gemini AI integration
+
+## Testing
+
+The API was tested with:
+
+* Normal meeting notes
+* Empty input
+* Long input
+* Invalid request body
+* Missing API key
+* AI API failure scenario
+
+All tests were completed successfully and appropriate responses/errors were returned.
