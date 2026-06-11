@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -8,6 +9,14 @@ import os
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 API_KEY = os.getenv("GEMINI_API_KEY")
 
@@ -41,18 +50,36 @@ You are helping process meeting notes.
 
 Read the meeting notes and generate:
 
-1. A concise summary
-2. Key decisions made
-3. Action items assigned
-4. A professional follow-up email
+1. A short summary
+2. A detailed summary
+3. Key decisions made during the meeting
+4. Action items assigned
+5. A professional follow-up email
+
+For action items:
+- Extract the task
+- Extract the owner
+- Extract the deadline if mentioned
+- Extract the priority if mentioned
+- If deadline or priority is not mentioned, use "Not specified"
 
 Return ONLY valid JSON in this exact format:
 
 {{
-    "summary": "...",
-    "key_decisions": ["..."],
-    "action_items": ["..."],
-    "follow_up_email": "..."
+  "short_summary": "...",
+  "detailed_summary": "...",
+  "key_decisions": [
+    "..."
+  ],
+  "action_items": [
+    {{
+      "task": "...",
+      "owner": "...",
+      "deadline": "...",
+      "priority": "..."
+    }}
+  ],
+  "follow_up_email": "..."
 }}
 
 Meeting Notes:
@@ -77,10 +104,10 @@ Meeting Notes:
             detail="Model returned invalid JSON"
         )
 
-    except Exception as e:
+    except Exception:
         raise HTTPException(
             status_code=500,
-            detail=f"AI request failed: {str(e)}"
+            detail="AI service is temporarily unavailable. Please try again in a minute."
         )
 
 
