@@ -1,0 +1,68 @@
+[
+    {
+        "notes": "Project Progress Review Meeting\n\nThe team met to review the current status of the AI Meeting Notes Processor project. Rayyan demonstrated the completed frontend interface, including summary generation, action item extraction, and follow-up email generation. The team agreed that the current implementation is stable and ready for history storage functionality.\n\nA decision was made to store all generated meeting summaries for future reference. The team discussed using a JSON file for storage because it is simple to implement and suitable for the current project requirements. The stored data should include the original meeting notes, generated summaries, key decisions, action items, follow-up email, and the date and time when the record was created.\n\nSeveral action items were assigned during the meeting. Rayyan will implement meeting history storage by Thursday with high priority. Priya will review the stored data structure and provide feedback by Friday with medium priority. The project lead will verify that new meeting summaries are being saved correctly before the next review meeting.\n\nThe team also discussed future enhancements. A dedicated history page may be added later so users can browse previous meeting summaries. Additional filtering and search functionality may be considered in future versions of the application.\n\nThe meeting concluded with agreement that history storage is the next major milestone and should be completed before work begins on the history viewing interface.",
+        "short_summary": "The team reviewed the AI Meeting Notes Processor project, confirming the frontend is complete and stable. A key decision was made to implement meeting history storage using a JSON file to save all generated summaries and related data. Action items were assigned for implementation and review of this new feature.",
+        "detailed_summary": "The meeting commenced with a review of the AI Meeting Notes Processor project's current status. Rayyan provided a demonstration of the completed frontend interface, showcasing functionalities such as summary generation, action item extraction, and follow-up email generation. The team reached a consensus that the current implementation is stable and ready for the next significant phase: history storage functionality. A pivotal decision was made to store all generated meeting summaries for future reference. It was agreed that a JSON file would be utilized for this storage, primarily due to its simplicity and suitability for the project's current needs. The data stored will comprehensively include the original meeting notes, generated summaries, key decisions, action items, the follow-up email, and the precise date and time of record creation. Several action items were assigned to facilitate this implementation. Discussions also touched upon future enhancements, such as potentially adding a dedicated history page with filtering and search capabilities in subsequent versions. The meeting concluded by reaffirming that history storage is the immediate major milestone and must be completed before any work commences on the history viewing interface.",
+        "key_decisions": [
+            "All generated meeting summaries will be stored for future reference.",
+            "A JSON file will be used for history storage due to its simple implementation and suitability for current project requirements.",
+            "The stored data will include the original meeting notes, generated summaries, key decisions, action items, follow-up email, and the date and time when the record was created.",
+            "History storage is the next major milestone and must be completed before work begins on the history viewing interface."
+        ],
+        "action_items": [
+            {
+                "task": "Implement meeting history storage",
+                "owner": "Rayyan",
+                "deadline": "Thursday",
+                "priority": "High"
+            },
+            {
+                "task": "Review the stored data structure and provide feedback",
+                "owner": "Priya",
+                "deadline": "Friday",
+                "priority": "Medium"
+            },
+            {
+                "task": "Verify that new meeting summaries are being saved correctly",
+                "owner": "The project lead",
+                "deadline": "Not specified",
+                "priority": "Not specified"
+            }
+        ],
+        "follow_up_email": "Subject: Project Progress Review - AI Meeting Notes Processor - History Storage Implementation\n\nDear Team,\n\nThank you for attending today's project progress review meeting for the AI Meeting Notes Processor. It was a productive session.\n\nWe successfully reviewed the current status of the project, with Rayyan demonstrating the completed frontend interface, including summary generation, action item extraction, and follow-up email generation. The team agreed that the current implementation is stable and ready for the next phase.\n\nA key decision was made to proceed with implementing history storage functionality for all generated meeting summaries. We will be using a JSON file for this purpose, and the stored data will comprehensively include the original meeting notes, generated summaries, key decisions, action items, the follow-up email, and the date and time of creation. This is our immediate major milestone, to be completed before work begins on the history viewing interface.\n\nHere are the action items agreed upon during the meeting:\n\n*   **Rayyan:** Implement meeting history storage. (Deadline: Thursday, Priority: High)\n*   **Priya:** Review the stored data structure and provide feedback. (Deadline: Friday, Priority: Medium)\n*   **The project lead:** Verify that new meeting summaries are being saved correctly before the next review meeting.\n\nPlease reach out if you have any questions or require further clarification on these items.\n\nBest regards,\n[Your Name/Project Lead]",
+        "created_at": "2026-06-16 12:09:55"
+    },
+    {
+        "notes": "Weekly Project Review Meeting\n\nThe team met to review the progress of the AI Meeting Notes Processor project. Rayyan presented the latest version of the application, including the FastAPI backend, Gemini AI integration, meeting history storage, and export functionality. The team was satisfied with the current progress and agreed that the project is moving according to schedule.\n\nA discussion was held regarding user experience improvements. It was decided that users should be able to download generated meeting summaries in multiple formats. The team approved support for TXT and JSON exports. CSV export for action items was discussed as an optional enhancement that may be added later if time permits.\n\nThe team also reviewed the recently implemented meeting history storage feature. It was confirmed that generated summaries, action items, follow-up emails, and timestamps are being saved correctly. The project lead emphasized the importance of maintaining accurate records so that users can revisit previous meeting summaries whenever necessary.\n\nSeveral action items were assigned during the meeting. Rayyan will complete testing of the export functionality by Thursday with high priority. Priya will verify the downloaded TXT and JSON files and ensure that all generated content is exported correctly by Friday with medium priority. The project lead will review the completed work next Monday with high priority.\n\nThe team agreed that future development should focus on improving usability and preparing the application for final demonstration. Additional features such as advanced search, filtering of meeting history, and CSV exports may be considered in future versions.\n\nThe meeting concluded with agreement that the export functionality is an important milestone because it allows users to save and share meeting summaries outside the application. The next review meeting was scheduled for the following week.",
+        "short_summary": "The team reviewed the AI Meeting Notes Processor project, confirming progress on the application's latest version, including FastAPI, Gemini AI integration, meeting history, and export functionality. Key decisions included supporting TXT and JSON export formats for summaries. Action items were assigned for testing export functionality, verifying downloaded files, and reviewing the completed work, with a focus on usability and demonstration preparation for future development.",
+        "detailed_summary": "The weekly project review meeting focused on the AI Meeting Notes Processor project. Rayyan presented the latest application version, showcasing the FastAPI backend, Gemini AI integration, meeting history storage, and export functionality. The team expressed satisfaction with the progress, noting that the project is on schedule. A significant discussion revolved around user experience, leading to the decision to enable multi-format downloads for meeting summaries, specifically approving TXT and JSON exports. CSV export for action items was considered an optional enhancement for future consideration. The meeting history storage feature was confirmed to be working correctly, saving summaries, action items, follow-up emails, and timestamps, with the project lead emphasizing the importance of accurate record-keeping. Several action items were assigned: Rayyan will complete high-priority testing of the export functionality by Thursday; Priya will verify the downloaded TXT and JSON files by Friday with medium priority; and the project lead will conduct a high-priority review of the completed work next Monday. The team agreed that future development should prioritize improving usability and preparing the application for its final demonstration, with features like advanced search, history filtering, and CSV exports considered for future versions. The meeting concluded by recognizing the export functionality as a crucial milestone for external sharing of summaries, and the next review meeting was scheduled for the following week.",
+        "key_decisions": [
+            "Approved support for TXT and JSON export formats for generated meeting summaries.",
+            "CSV export for action items will be considered as an optional enhancement for later, if time permits.",
+            "Future development should focus on improving usability and preparing the application for final demonstration.",
+            "The next review meeting was scheduled for the following week."
+        ],
+        "action_items": [
+            {
+                "task": "Complete testing of the export functionality",
+                "owner": "Rayyan",
+                "deadline": "Thursday",
+                "priority": "High"
+            },
+            {
+                "task": "Verify the downloaded TXT and JSON files and ensure that all generated content is exported correctly",
+                "owner": "Priya",
+                "deadline": "Friday",
+                "priority": "Medium"
+            },
+            {
+                "task": "Review the completed work (testing and verification of export functionality)",
+                "owner": "Project Lead",
+                "deadline": "Next Monday",
+                "priority": "High"
+            }
+        ],
+        "follow_up_email": "Subject: AI Meeting Notes Processor Project - Weekly Review Meeting Summary & Action Items\n\nDear Team,\n\nThank you for attending our weekly project review meeting today.\n\nWe had a productive session reviewing the progress of the AI Meeting Notes Processor project. Rayyan presented the latest application version, including the FastAPI backend, Gemini AI integration, meeting history storage, and export functionality, all of which are progressing well and on schedule.\n\nA key discussion point was user experience improvements, leading to the decision to support TXT and JSON export formats for generated meeting summaries. We also confirmed the correct functioning of the meeting history storage feature.\n\nLooking ahead, our immediate focus will be on refining usability and preparing the application for its final demonstration. We also discussed potential future enhancements such as advanced search, filtering, and CSV exports.\n\nPlease find the key decisions and assigned action items below:\n\n**Key Decisions:**\n*   Approved support for TXT and JSON exports for generated meeting summaries.\n*   Agreed that future development will focus on improving usability and preparing the application for final demonstration.\n*   The next review meeting is scheduled for the following week.\n\n**Action Items:**\n*   **Rayyan**: Complete testing of the export functionality. (Deadline: Thursday, Priority: High)\n*   **Priya**: Verify downloaded TXT and JSON files and ensure all generated content is exported correctly. (Deadline: Friday, Priority: Medium)\n*   **Project Lead**: Review the completed export functionality work. (Deadline: Next Monday, Priority: High)\n\nPlease prioritize these tasks to ensure we maintain our project momentum.\n\nThank you,\n\n[Your Name/Project Lead Name]",
+        "created_at": "2026-06-17 12:08:52"
+    }
+]

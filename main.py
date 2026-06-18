@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 import json
 import os
+from datetime import datetime
 
 load_dotenv()
 
@@ -26,6 +27,30 @@ if API_KEY:
 
 class MeetingNotes(BaseModel):
     text: str
+
+
+def save_to_history(notes, result):
+
+    history_file = "history.json"
+
+    try:
+        with open(history_file, "r") as file:
+            history = json.load(file)
+    except:
+        history = []
+
+    history.append({
+        "notes": notes,
+        "short_summary": result.get("short_summary"),
+        "detailed_summary": result.get("detailed_summary"),
+        "key_decisions": result.get("key_decisions"),
+        "action_items": result.get("action_items"),
+        "follow_up_email": result.get("follow_up_email"),
+        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    })
+
+    with open(history_file, "w") as file:
+        json.dump(history, file, indent=4)
 
 
 @app.get("/health")
@@ -96,7 +121,14 @@ Meeting Notes:
             .strip()
         )
 
-        return json.loads(cleaned_response)
+        result = json.loads(cleaned_response)
+
+        save_to_history(
+            notes.text,
+            result
+        )
+
+        return result
 
     except json.JSONDecodeError:
         raise HTTPException(
