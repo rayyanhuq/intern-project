@@ -18,7 +18,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/generate-summary",
+        "https://meeting-notes-backend-y55p.onrender.com/generate-summary",
         {
           method: "POST",
           headers: {
