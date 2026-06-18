@@ -139,11 +139,11 @@ Meeting Notes:
             detail="Model returned invalid JSON"
         )
 
-    except Exception:
-        raise HTTPException(
-            status_code=500,
-            detail="AI service is temporarily unavailable. Please try again in a minute."
-        )
+    except Exception as e:
+     raise HTTPException(
+        status_code=500,
+        detail=f"AI request failed: {str(e)}"
+    )
 
 
 @app.post("/extract-tasks")
